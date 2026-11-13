@@ -1,247 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ember & Crust – Wood‑Fired Pizza & Taproom</title>
-  <meta name="description" content="Neighborhood wood‑fired pizza & taproom. Reserve a table, order online, or call us." />
-
-  <!-- Fonts -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#efe8dc">
+  <meta name="description" content="Ember & Crust — a restaurant web design concept by Rochester Web Solutions. Browse a sample wood-fired menu and explore the reservation experience.">
+  <title>Ember & Crust | Wood Fired, Made to Gather — RWS Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <!-- Skip link -->
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Top utility bar -->
-  <div class="util-bar">
-    <span id="openBadge" class="badge">Checking hours…</span>
-    <span class="util-location">143 W Second St, Rochester, MI</span>
-  </div>
-
-  <!-- Header / Nav -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="demo-note"><span class="note-spark">✳</span> An independent restaurant concept by Rochester Web Solutions. Sample menu, booking and ordering only. <a href="https://rocwebsolutions.com/contact.html" target="_blank" rel="noopener noreferrer">Work with RWS ↗</a></div>
   <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="logo" href="#top">Ember &amp; Crust</a>
-      <nav class="site-nav" aria-label="Main">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle">Menu</button>
-        <ul id="primary-menu">
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#specials">Specials</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#location">Location</a></li>
-        </ul>
-      </nav>
-      <div class="header-ctas">
-        <a class="btn btn-wheat" href="reserve.html">Reserve</a>
-        <a class="btn btn-brick" href="#" aria-label="Order online (demo)">Order</a>
-      </div>
+    <div class="header-inside wrap">
+      <a class="brand" href="#top" aria-label="Ember and Crust home"><span class="brand-mark">e<span>✳</span>c</span><span class="brand-text">EMBER<br><i>&</i> CRUST</span></a>
+      <button class="mobile-toggle" aria-controls="main-nav" aria-expanded="false" type="button"><span class="sr-only">Open navigation</span><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="#menu">The menu</a><a href="#story">Our story</a><a href="#experience">The experience</a><a href="#visit">Visit</a></nav>
+      <button class="nav-book button-small" data-reserve type="button">Find a table <span aria-hidden="true">↗</span></button>
     </div>
   </header>
-
-  <!-- Hero -->
-  <section class="hero" aria-label="Featured dishes and vibe">
-    <div class="hero-slide current" style="background-image: url('assets/img/hero-1.jpg')">
-      <div class="hero-content container">
-        <h1>Wood‑Fired Pizza. Local Taps. Good People.</h1>
-        <p>Stone‑baked pies, seasonal salads, and Michigan beers on draft.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-brick" href="reserve.html">Reserve a Table</a>
-          <a class="btn btn-ghost" href="#menu">View Menu</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-slide" style="background-image: url('assets/img/hero-2.jpg')">
-      <div class="hero-content container">
-        <h2>Happy Hour • Mon–Thu 3–6</h2>
-        <p>$2 off drafts • $8 Margherita slices • Half‑price wings</p>
-      </div>
-    </div>
-    <button class="hero-nav prev" aria-label="Previous slide">‹</button>
-    <button class="hero-nav next" aria-label="Next slide">›</button>
-  </section>
-
   <main id="main">
-    <!-- Quick actions (mobile sticky duplicates at bottom) -->
-    <section class="quick-actions container" aria-label="Quick actions">
-      <a class="qa" href="reserve.html">Reserve</a>
-      <a class="qa" href="#" onclick="window.location.href='tel:+12485551234'">Call</a>
-      <a class="qa" href="#">Order</a>
-    </section>
-
-    <!-- Specials / Today -->
-    <section id="specials" class="specials">
-      <div class="container">
-        <div class="specials-head">
-          <h3>Today at Ember &amp; Crust</h3>
-          <span id="todayFlag" class="flag">Today’s Special</span>
-        </div>
-        <div class="specials-grid">
-          <article class="card">
-            <h4 id="dailySpecialTitle">Truffle Honey Margherita</h4>
-            <p id="dailySpecialDesc">Fresh mozzarella, basil, truffle honey drizzle, sea salt.</p>
-            <span class="price">$16</span>
-          </article>
-          <article class="card">
-            <h4>Tap Feature</h4>
-            <p>Rochester Mills Pine Knob Pils • 16oz</p>
-            <span class="price">$7</span>
-          </article>
-          <article class="card">
-            <h4>Event</h4>
-            <p>Trivia Night · Thursdays @ 7:30 PM</p>
-          </article>
-        </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="diamond"></span> A PLACE FOR THE EVERYDAY OCCASION <span class="diamond"></span></div>
+        <h1 id="hero-title">Good things<br>take <em>fire.</em></h1>
+        <p>Slow dough. Hot ovens. Long conversations. A neighborhood table for the moments worth sharing.</p>
+        <div class="hero-actions"><a class="btn btn-dark" href="#menu">Explore the menu <span aria-hidden="true">↗</span></a><button class="btn btn-line" type="button" data-reserve>Make it a date <span aria-hidden="true">↗</span></button></div>
+        <div class="hero-footnote"><span>EST. IN THE IMAGINATION</span><span>01 / 04 <b class="footline"></b></span></div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/img/hero-1.jpg" alt="Wood-fired pizza topped with fresh ingredients" fetchpriority="high">
+        <div class="photo-overlay"></div>
+        <div class="round-stamp" aria-hidden="true"><span>HANDMADE<br>WITH<br>HEAT</span><b>✳</b></div>
+        <span class="photo-caption">THE GOOD STUFF, STRAIGHT FROM THE OVEN</span>
       </div>
     </section>
-
-    <!-- Menu preview -->
-    <section id="menu" class="menu-preview">
-      <div class="container">
-        <div class="section-head">
-          <h3>Popular Picks</h3>
-          <a class="link-arrow" href="menu.html">View Full Menu →</a>
-        </div>
-        <div class="menu-grid">
-          <article class="item">
-            <h4>Margherita <span class="chip">V</span></h4>
-            <p>San Marzano, fresh mozzarella, basil, olive oil.</p>
-            <span class="price">$14</span>
-          </article>
-          <article class="item">
-            <h4>Hot Honey Pepperoni <span class="chip">🌶</span></h4>
-            <p>Cup‑and‑char pepperoni, ricotta, chili honey.</p>
-            <span class="price">$17</span>
-          </article>
-          <article class="item">
-            <h4>Wild Mushroom</h4>
-            <p>Cremini, oyster, fontina, thyme, garlic butter.</p>
-            <span class="price">$18</span>
-          </article>
-          <article class="item">
-            <h4>Chopped Italian Salad <span class="chip">GF</span></h4>
-            <p>Romaine, chickpeas, salami, pepperoncini, oregano vinaigrette.</p>
-            <span class="price">$12</span>
-          </article>
-          <article class="item">
-            <h4>Wings (8)</h4>
-            <p>Wood‑roasted, lemon‑garlic or Calabrian chili.</p>
-            <span class="price">$13</span>
-          </article>
-          <article class="item">
-            <h4>Tiramisu</h4>
-            <p>Espresso‑soaked ladyfingers, mascarpone, cocoa.</p>
-            <span class="price">$8</span>
-          </article>
-        </div>
-      </div>
+    <section class="ticker" aria-label="Our philosophy"><div class="ticker-run">THE DOUGH IS THE DIFFERENCE <span>✳</span> BEST SHARED TOGETHER <span>✳</span> NEVER IN A HURRY <span>✳</span> THE DOUGH IS THE DIFFERENCE <span>✳</span> BEST SHARED TOGETHER <span>✳</span></div></section>
+    <section class="intro-section section-padding" id="story" aria-labelledby="story-title">
+      <div class="wrap intro-grid"><div class="section-kicker"><span class="index">01 / OUR APPROACH</span><span class="thin-line"></span><span class="tiny-asterisk">✳</span></div><div><h2 id="story-title">The kind of place<br>you <em>stay a while.</em></h2><div class="intro-under"><p>Some of the best nights start with a simple question: “One more slice?” We imagined Ember & Crust as the answer — a warm, easygoing place where the food gets the attention, and the people make the memories.</p><a href="#experience" class="text-link">A seat at our table <span aria-hidden="true">↗</span></a></div></div></div>
     </section>
-
-    <!-- Photo strip -->
-    <section class="gallery" aria-label="Photo gallery">
-      <div class="container gallery-strip">
-        <img src="assets/img/gallery-1.jpg" alt="Wood‑fired oven with flames" />
-        <img src="assets/img/gallery-2.jpg" alt="Close‑up of pizza crust and basil" />
-        <img src="assets/img/gallery-3.jpg" alt="Tap handles at the bar" />
-      </div>
-    </section>
-
-    <!-- Reviews -->
-    <section id="reviews" class="reviews">
-      <div class="container">
-        <h3>What Locals Say</h3>
-        <div class="review-carousel" aria-live="polite">
-          <blockquote class="rev current">
-            “Best crust in town. The char is perfect and the vibe is cozy.” <cite>— Jordan M.</cite>
-          </blockquote>
-          <blockquote class="rev">
-            “Happy hour is a cheat code. Great pours, cheap slices.” <cite>— Alina R.</cite>
-          </blockquote>
-          <blockquote class="rev">
-            “Service is fast even on busy nights. Get the mushroom pie.” <cite>— Dev P.</cite>
-          </blockquote>
-        </div>
-        <div class="dots" role="tablist" aria-label="Select review">
-          <button class="dot active" aria-label="Review 1"></button>
-          <button class="dot" aria-label="Review 2"></button>
-          <button class="dot" aria-label="Review 3"></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location -->
-    <section id="location" class="location">
-      <div class="container loc-wrap">
-        <div class="loc-copy">
-          <h3>Hours &amp; Location</h3>
-          <p><strong>143 W Second St</strong><br>Rochester, MI 48307</p>
-          <p><strong>Hours</strong><br>Mon–Thu 11–10 · Fri–Sat 11–11 · Sun 11–9</p>
-          <div class="loc-actions">
-            <a class="btn btn-wheat" href="https://www.google.com/maps/search/?api=1&query=143%20W%20Second%20St%20Rochester%20MI" target="_blank" rel="noopener">Open in Maps</a>
-            <a class="btn btn-ghost" href="tel:+12485551234">Call (248) 555‑1234</a>
-          </div>
-        </div>
-        <div class="loc-map">
-          <!-- Simple map embed (static) -->
-          <iframe
-            title="Google Map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=143%20W%20Second%20St%20Rochester%20MI&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
-        </div>
-      </div>
-    </section>
+    <section class="feature-grid wrap" aria-label="Photography"><figure class="feature-large"><img loading="lazy" src="assets/img/gallery-2.jpg" alt="Freshly baked pizza with basil and a charred crust"><figcaption>THOUGHTFUL INGREDIENTS. ZERO SHORTCUTS.</figcaption></figure><div class="feature-side"><figure><img loading="lazy" src="assets/img/gallery-1.jpg" alt="A glowing wood fired pizza oven"></figure><div class="feature-side-copy"><span>OUR PROCESS</span><p>A little patience.<br><em>A lot of flavor.</em></p><span class="mini-flourish">✳</span></div></div></section>
+    <section class="menu-section section-padding" id="menu" aria-labelledby="menu-title"><div class="wrap">
+      <div class="section-row"><div><p class="section-index">02 / FROM THE KITCHEN</p><h2 id="menu-title">Something for<br><em>every appetite.</em></h2></div><p class="section-lede">A sample menu made for getting together. Choose a category, find your favorite and build a pretend order.</p></div>
+      <div class="menu-layout"><div class="menu-main"><div class="menu-tabs" role="group" aria-label="Filter menu"><button type="button" class="menu-tab active" data-category="all" aria-pressed="true">Everything</button><button type="button" class="menu-tab" data-category="pizza" aria-pressed="false">Wood-fired pizza</button><button type="button" class="menu-tab" data-category="small" aria-pressed="false">Small plates</button><button type="button" class="menu-tab" data-category="dessert" aria-pressed="false">Something sweet</button></div><div class="menu-items" id="menu-items" aria-live="polite"></div></div>
+      <aside class="menu-sidebar"><div class="sidebar-photo"><img loading="lazy" src="assets/img/hero-2.jpg" alt="Wood-fired pizza and restaurant atmosphere"></div><div class="sidebar-inner"><p class="side-eyebrow">MADE TO ORDER</p><h3>Take a little<br><em>happiness home.</em></h3><p>Build a sample order here to see the experience in action. No payment or actual order is placed.</p><button class="btn btn-dark cart-trigger" type="button" data-open-cart>View sample bag <span id="cart-count">0</span></button></div></aside></div>
+    </div></section>
+    <section class="experience-section" id="experience" aria-labelledby="experience-title"><div class="experience-photo"><img loading="lazy" src="assets/img/gallery-3.jpg" alt="Restaurant taproom details"><span>THE EVENING IS YOURS</span></div><div class="experience-copy"><p class="section-index">03 / MORE THAN A MEAL</p><h2 id="experience-title">Come hungry.<br><em>Leave happy.</em></h2><p>First dates, old friends, midweek celebrations. There's always a good reason to pull up another chair.</p><div class="experience-divider"></div><div class="details-pair"><span>YOUR SEAT</span><strong>Right where you belong.</strong></div><div class="details-pair"><span>THE VIBE</span><strong>Come as you are.</strong></div><button class="btn btn-cream" type="button" data-reserve>Explore reservations <span aria-hidden="true">↗</span></button></div></section>
+    <section class="visit-section section-padding" id="visit"><div class="wrap visit-grid"><div><p class="section-index">04 / COME ON IN</p><h2>The table's<br><em>almost ready.</em></h2></div><div class="visit-right"><p>Ember & Crust is a fictional hospitality brand built as a portfolio demonstration. The interaction flows are real front-end examples, but the restaurant, hours and reservations are not.</p><button class="btn btn-dark" type="button" data-reserve>Try the booking demo <span aria-hidden="true">↗</span></button></div></div></section>
   </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Ember &amp; Crust</h4>
-        <p>Neighborhood wood‑fired pizza &amp; taproom.</p>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <p>(248) 555‑1234<br>hello@emberandcrust.demo</p>
-      </div>
-      <div>
-        <h5>Visit</h5>
-        <p>143 W Second St, Rochester, MI</p>
-      </div>
-    </div>
-    <p class="legal">© <span id="year"></span> Ember &amp; Crust. All rights reserved.</p>
-
-    <!-- Mobile sticky action bar -->
-    <div class="mobile-sticky">
-      <a href="reserve.html">Reserve</a>
-      <a href="tel:+12485551234">Call</a>
-      <a href="#">Order</a>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js" defer></script>
-
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Restaurant",
-    "name":"Ember & Crust",
-    "address":{"@type":"PostalAddress","streetAddress":"143 W Second St","addressLocality":"Rochester","addressRegion":"MI","postalCode":"48307"},
-    "telephone":"+1-248-555-1234",
-    "servesCuisine":"Pizza",
-    "openingHoursSpecification":[
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"11:00","closes":"22:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"11:00","closes":"23:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"21:00"}
-    ],
-    "priceRange":"$$"
-  }
-  </script>
-</body>
-</html>
+  <footer class="site-footer"><div class="wrap footer-top"><div class="footer-big">GOOD FOOD.<br><em>GOOD COMPANY.</em></div><div class="footer-mini"><div><span>EXPLORE</span><a href="#menu">The menu</a><a href="#story">Our story</a><a href="#experience">The experience</a></div><div><span>THIS IS A CONCEPT</span><p>Designed & developed by Rochester Web Solutions for demonstration purposes.</p><a href="https://rocwebsolutions.com/" target="_blank" rel="noopener noreferrer">rocwebsolutions.com ↗</a></div></div></div><div class="footer-bottom wrap"><span>© <span id="year"></span> EMBER & CRUST — FICTIONAL BRAND</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <dialog class="demo-dialog reservation-dialog" id="reservation-dialog" aria-labelledby="reservation-title"><div class="dialog-head"><p>EMBER & CRUST / EXPERIENCE</p><button type="button" class="icon-close" data-close-reserve aria-label="Close booking dialog">×</button></div><h2 id="reservation-title">Pull up<br><em>a chair.</em></h2><p>Try the reservation interface — a front-end preview, not a live table booking.</p><form id="reserve-form"><div class="field-pair"><label>DATE<input type="date" name="date" id="reserve-date" required></label><label>PARTY SIZE<select name="party" required><option value="2">2 guests</option><option value="1">1 guest</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option></select></label></div><label>TIME<select name="time" required><option value="17:30">5:30 PM</option><option value="18:00">6:00 PM</option><option value="18:30">6:30 PM</option><option value="19:00">7:00 PM</option><option value="19:30">7:30 PM</option><option value="20:00">8:00 PM</option></select></label><button class="btn btn-dark full-btn" type="submit">Preview booking <span aria-hidden="true">↗</span></button></form><div class="demo-result" id="reserve-result" role="status" hidden></div><p class="demo-foot">No reservation is made and no information is sent.</p></dialog>
+  <dialog class="demo-dialog cart-dialog" id="cart-dialog" aria-labelledby="cart-title"><div class="dialog-head"><p>YOUR SAMPLE ORDER</p><button type="button" class="icon-close" data-close-cart aria-label="Close sample order">×</button></div><h2 id="cart-title">Good choices.</h2><p class="cart-subtitle">Your selections stay in this browser. This is not a real checkout.</p><div id="cart-contents" class="cart-contents" aria-live="polite"></div><div class="cart-total"><span>DEMO TOTAL</span><strong id="cart-total">$0.00</strong></div><button class="btn btn-dark full-btn" id="clear-cart" type="button">Clear sample order <span aria-hidden="true">↗</span></button></dialog>
+</body></html>
